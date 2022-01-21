@@ -3,15 +3,15 @@ package PracticePrograms;
 public class Bascis {
 	public static void main(String [] args)
 	{
-		char ch = '-';
+		char ch = '-'; //Printing Character
 		
 		System.out.println(ch);
 		System.out.println();
 		System.out.println();
-		preincrementopr();
+		preincrementopr();//Increment and Decrement OpertionS
 	}
 	
-private static void preincrementopr() {
+private static void preincrementopr() {// Increment and Decrement OpertionS Executed
 	int x,y,z;
 	int a,b,c;
 	int r1,r2,r3,r4,r5;
