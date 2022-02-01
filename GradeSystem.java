@@ -20,8 +20,7 @@ public class GradeSystem {
 	    comp=sc.nextFloat();
 	    total=eng+phy+chem+math+comp;
 	    percent=(total/500)*100;
-	   // calc(total,percent);
-	    //grading(percent);
+	   //calling Display method 
 	    display(eng,phy,chem,math,comp,total,percent);
 	
 	}
