@@ -9,7 +9,7 @@ public class PerfectNumber {
 		// TODO Auto-generated method stub
 int num;
 Scanner sc = new Scanner(System.in);
-System.out.println("***ENTER A NUMBER***");
+System.out.println("***ENTER THE RANGE OF NUMBER***");
 
 num=sc.nextInt();
 int r;
