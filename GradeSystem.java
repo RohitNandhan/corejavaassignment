@@ -1,68 +1,68 @@
-package PracticePrograms;
+package myprograms;
 import java.util.Scanner;
 public class GradeSystem {
 
 	public static void main(String []args) {
-		float total,percent;
-		float eng,phy,chem,math,comp;
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("**Enter marks of five subjects**");
-		System.out.println();
-	    System.out.print("Enter marks of English subject:");
-	    eng=sc.nextFloat();
-	    System.out.print("Enter marks of physics subject:");
-	    phy=sc.nextFloat();
-	    System.out.print("Enter marks of chemistry subject:");
-	    chem=sc.nextFloat();
-	    System.out.print("Enter marks of maths subject:");
-	    math=sc.nextFloat();
-	    System.out.print("Enter marks of computer subject:");
-	    comp=sc.nextFloat();
-	    total=eng+phy+chem+math+comp;
-	    percent=(total/500)*100;
-	   //calling Display method 
-	    display(eng,phy,chem,math,comp,total,percent);
-	
+		String[] s1= {"ENGLISH", "TAMIL", "MATHS", "PHYSICS", "CHEMISTRY", "COMPUTER_SCIENCE"};
+		int[] mark = new int[10];
+		int[] m = new int[10];
+		int t=0;
+		for(int i = 0; i<s1.length;i++)
+		{
+		  System.out.println("Enter marks of "+s1[i]+ " subject:");
+	       m[i] = getchar(mark[i]);  
+	       t+=m[i];
+		}	
+		
+		for(int j=0;j<s1.length;j++)
+		{
+		display(s1[j],m[j]);	
+		}
+		display(t);
 	}
+	public static int getchar(int in) {
+		Scanner sc = new Scanner(System.in);
+		in=sc.nextInt();
+       return in;
+	}  
 	
-	public static char grading(float percent)
+	public static float calc(float t) 
 	{
-		char ch = 'a' ;
-		 if(percent>=90){
+		float percentage;
+		percentage=(t/600)*100;
+		return percentage;
+	}   
+
+	public static char grading(int mark)
+	{
+		char ch = 'a';
+		 if(mark>=90){
 		    	ch='O';
-		    }else if(percent>=80 && percent<90){
+		    }else if(mark>=80 && mark<90){
 		    	ch='A';
-		    }else if(percent>=70 && percent<80){
+		    }else if(mark>=70 && mark<80){
 		    	ch='B';
-		    }else if(percent>=60 && percent<70){
+		    }else if(mark>=60 && mark<70){
 		    	ch='C';
-		    }else if(percent>=40 && percent<60){
+		    }else if(mark>=40 && mark<60){
 		    	ch='D';
-		    }else if(percent<40){
+		    }else if(mark<40){
 		    	ch='E';		   
 		    	}
-		// System.out.println(ch);
 		return ch;
 		
 	}
-	public static void display(float eng,float phy,float chem,float math,float comp,float total,float percent)
-
-	{
-		System.out.printf(" The Marks scored in English is : " +eng+ " and the grade is : "+grading(eng));
+	public static void display(String s1, int mark)
+	{	
+		System.out.printf(s1+ ":- \nMARK : "+mark+" \t GRADE : "+grading(mark));
+		System.out.println("\n");
+	}
+	public static void display(int t)
+	{	
+		float p =calc(t);
+		System.out.println(" TOTAL MARKS SCORED : " +t+"\n PERCENTAGE : "+p+"%");
 		System.out.println();
-		System.out.printf("The Marks scored in Physics is : " +phy+ " and the grade is : "+grading(phy));
-		System.out.println();
-		System.out.printf("The Marks scored in Chemistry is : " +chem+ " and the grade is : "+grading(chem));
-		System.out.println();
-		System.out.printf("The Marks scored in Maths is : " +math+ " and the grade is : "+grading(math));
-		System.out.println();
-		System.out.printf("The Marks scored in Computer Science is :" +comp+ " and the grade is : "+grading(comp));
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.printf("TOTAL MARKS SCORED = "+total+" and GRADE = :"+grading(total));
-		System.out.println();
-		System.out.printf("PERCENTAGE OBTAINED = "+percent);
-		
 	}
 }
