@@ -97,7 +97,7 @@ public class Account implements Runnable{										//Initialization
 						+ "Current Balance = "+moneyFormat.format(Balance));
 			}
 			else {
-				throw new Exception("Insuffient Balance");
+				throw new Exception("\nInsuffient Balance");
 			}
 			}
 		
@@ -135,7 +135,7 @@ public class Account implements Runnable{										//Initialization
 						+ "\n1.Display Account"
 						+ "\n2.Withdraw "
 						+ "\n3.Deposit"
-						+ "\n4.Exit");
+						+ "\n4.Previous Menu");
 				System.out.println("Enter your Choice :");
 				int selection;
 				selection=sc.nextInt();
@@ -151,6 +151,8 @@ public class Account implements Runnable{										//Initialization
 				getDeposit();
 				break;
 			case 4:
+				System.out.println("\n----- Transaction Completed -----\n");
+					System.out.println("\n----- Moving to Previous Menu -----\n");
 				Accounting();
 				break;	
 			default:
@@ -159,7 +161,7 @@ public class Account implements Runnable{										//Initialization
 				getAccNumber();
 				break;
 		  	}
-		  	System.out.println("/n-> to continue press y, Y");
+		  	System.out.println("\n-> to continue press y, Y");
 		  	yes=sc.next().charAt(0);
 		  	}while(yes=='y'|| yes=='Y');
 		    	return;
@@ -170,7 +172,7 @@ public class Account implements Runnable{										//Initialization
 				int tnum=sc.nextInt();
 				System.out.println("Enter your PIN : ");
 				int tpin=sc.nextInt();	
-		    	try {
+		    	try {									//Catching InvaildInput Exception
 		    		for(Account o : obj) {
             			 {
 							if(tnum == o.getAccNumber() && tpin==o.getPin()) {
@@ -183,7 +185,7 @@ public class Account implements Runnable{										//Initialization
 								
 						
 		    public static void addAccouct()
-			{
+			{								//Initialization of Account class Objects
 				obj[num]=new Account();
 				obj[num].SetAccount();
 				num++;
@@ -210,7 +212,7 @@ public class Account implements Runnable{										//Initialization
 	                //	num++;
 	                    break;  
 	                case 2:  
-	                	try {
+	                	try {									//Catching NoAccount Exception
 	                   		if (obj != null) {
 	                   			accountAccess();
 							}
@@ -218,7 +220,7 @@ public class Account implements Runnable{										//Initialization
 	                	} 
 	                	catch(Exception e)
 	                	{
-	                		System.err.println("// No DATA FOUND //");
+	                		System.err.println("\n// No DATA FOUND //");
 	                		System.out.println("Please! Create Account " + " \n ###############");
 	                		System.out.println("\n Creating new Account......");
 	                		addAccouct();
