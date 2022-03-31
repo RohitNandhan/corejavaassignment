@@ -1,4 +1,4 @@
-package simple_programs;
+package Practical_Assessments;
 
 
 import java.text.DecimalFormat;
